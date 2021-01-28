@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <utime.h>
+#include <sys/utime.h>
 
 #define PE_SIGNATURE "00004550"
 

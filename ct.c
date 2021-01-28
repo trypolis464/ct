@@ -1,3 +1,7 @@
+/*** NOTE ***/
+/*** My changes to this code are under the MIT License. As I do not know who made this script initially, and there was no license with it, I am going to assume that the initial code wasn't licensed at all. ***/
+/*** Contributions will all be considered to be a part of the MIT License. ***/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

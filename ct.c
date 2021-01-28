@@ -6,8 +6,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#ifdef _MSC_VER
 #include <sys/utime.h>
-
+#else
+#include <utime.h>
+#endif
 #define PE_SIGNATURE "00004550"
 
 int read_four_bytes_hex(char *str, FILE *src);

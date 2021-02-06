@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// Reads four bytes in hex in little endian format.
+// Reads four bytes in Hex in Little Endian format.
 int read_four_bytes_hex(char *str, FILE *src) {
     char byte_str[2];
     int i;

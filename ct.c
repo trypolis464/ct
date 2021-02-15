@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 	i += 4;
 	if (strcmp(temp, PE_SIGNATURE) != 0)
 	{
-		fprintf(stderr, "File is not a PE or its header is corrupted. Either way, bubye!");
+		fprintf(stderr, "File is not a PE or its header is corrupted.");
 		return -1;
 	}
 	i = 0;

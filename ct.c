@@ -16,7 +16,7 @@
 
 #define PE_SIGNATURE "00004550"
 
-int read_four_bytes_hex(char *str, FILE *src);
+int readFourBytesHex(char *str, FILE *src);
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	unsigned long n;
 	time_t tm;
 	struct utimbuf new_times;
-	char *c_time_string;
+	char *cTimeString;
 	if (argc != 2)
 	{
 		fprintf(stderr, "usage: %s <DLL/EXE>", argv[0]);
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	temp[8] = '\0';
-	read_four_bytes_hex(temp, fp);
+	readFourBytesHex(temp, fp);
 	i += 4;
 	n = strtoul(temp, NULL, 16);
 	for (; i < n; i++)
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
-	if (read_four_bytes_hex(temp, fp) != 0)
+	if (readFourBytesHex(temp, fp) != 0)
 	{
 		fprintf(stderr, "error: the file is not a windows object file.");
 		return -1;
@@ -83,15 +83,15 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
-	if (read_four_bytes_hex(temp, fp) != 0)
+	if (readFourBytesHex(temp, fp) != 0)
 	{
 		fprintf(stderr, "error: the file is not a windows object file.");
 		return -1;
 	}
 	n = strtoul(temp, NULL, 16);
 	tm = n;
-	c_time_string = ctime(&tm);
-	printf("Compile Date Time Stamp: %s", c_time_string);
+	cTimeString = ctime(&tm);
+	printf("Compile Date Time Stamp: %s", cTimeString);
 	new_times.modtime = n;
 	utime(argv[1], &new_times);
 	fclose(fp);
@@ -99,9 +99,9 @@ int main(int argc, char *argv[])
 }
 
 // Reads four bytes in Hex in Little Endian format.
-int read_four_bytes_hex(char *str, FILE *src)
+int readFourBytesHex(char *str, FILE *src)
 {
-	char byte_str[2];
+	char byteStr[2];
 	int i;
 	int c;
 	str += 6;
@@ -112,8 +112,8 @@ int read_four_bytes_hex(char *str, FILE *src)
 		{
 			return -1;
 		}
-		sprintf(byte_str, "%002x ", c);
-		strncpy(str, byte_str, 2);
+		sprintf(byteStr, "%002x ", c);
+		strncpy(str, byteStr, 2);
 		str -= 2;
 	}
 	return 0;

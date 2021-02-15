@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	char *c_time_string;
 	if (argc != 2)
 	{
-		fprintf(stderr, "usage: provide a command in the format ct <path to the windows executable file>. Eg: ct d:\\dev\\binaries\\mydll.dll");
+		fprintf(stderr, "usage: %s <DLL/EXE>", argv[0]);
 		return 1;
 	}
 	fp = fopen(argv[1], "r");

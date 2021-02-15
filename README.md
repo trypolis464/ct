@@ -13,3 +13,7 @@ This script was not initially by me. I don't know who made it initially, I just 
 ```batch
 gcc ct.c -s -o ct.exe
 ```
+
+### build.bat
+
+You will need MinGW installed to run this bat file. If you do, simply press enter, and it should build!
